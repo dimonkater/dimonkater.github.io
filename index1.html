@@ -37,17 +37,16 @@
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+                            'Authorization': 'Bearer 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'
                         },
                         body: JSON.stringify({
                             model: 'gpt-4o-mini',
                             messages: [
-                                { role: 'system', content: 'Ты математик, реши, напиши коментарии на русском' },
+                                { role: 'system', content: 'Ты програмист, напиши мне чистый код, что бы была нормальная архитектура кода, не пиши все в одну строку, без всяких обьяснений, на языке C, когда заканчивается строка делай все на новую строку с помощью \n' },
                                 { role: 'user', content: inputText }
                             ]
                         })
                     });
-
                     const data = await response.json();
 
                     if (response.ok) {
